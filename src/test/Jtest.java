@@ -35,11 +35,11 @@ public class Jtest {
 		}
 		
 	
-		@Ignore
+		@Test
 		public void testdiv(){
 			logger.log(Level.INFO,"test3");
 			int result=Main.div(12,2);
-			assertEquals(6,result);
+			assertEquals(7,result);
 		}
 		
 		@Test
