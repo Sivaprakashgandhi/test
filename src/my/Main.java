@@ -22,7 +22,7 @@ public class Main {
 	}
 	
 	public static String  updateEntry(int id ,String name){ 
-		return trn.put(id name); 
+		return trn.put(id ,name); 
 	}
 	
 	public static String fetchEntry(int id) {
