@@ -38,7 +38,7 @@ public class Jtest {
 		@Test
 		public void testdiv(){
 			logger.log(Level.INFO,"test3");
-			int result=Main.div(12,2);
+			int result=Main.div(12,);
 			assertEquals(7,result);
 		}
 		
