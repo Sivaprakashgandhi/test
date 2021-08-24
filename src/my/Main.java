@@ -1,7 +1,13 @@
+package my;
 import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
-	static	HashMap<Integer,String> trn=new HashMap<Integer,String>();
+	static	HashMap<Integer,String> trn=new HashMap<>();
+	
+	private Main() {
+		throw new IllegalStateException("Utility class");
+	}
 	
 	public static int add(int a,int b) { return a+b; }
 	public static int div(int a,int b) { return a/b; }
@@ -12,8 +18,7 @@ public class Main {
 	}
 	
 	public static String deleteEntry(int id) {
-		String res=trn.remove(id);
-		return res;
+		return trn.remove(id);
 	}
 	
 	public static String  updateEntry(int id ,String name){ 
@@ -24,7 +29,7 @@ public class Main {
 			return trn.get(id);
 	}
 	
-	public static HashMap<Integer,String> fetchAllEntries(){
+	public static Map<Integer,String> fetchAllEntries(){
 		return trn;
 	}
 }

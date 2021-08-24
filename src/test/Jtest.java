@@ -1,26 +1,35 @@
+package test;
+
 import static org.junit.Assert.assertEquals;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import org.junit.Ignore;
 import org.junit.jupiter.api.*;
 
+import my.Main;
+
 public class Jtest {
+		static Logger logger = Logger.getAnonymousLogger();
 		@BeforeAll
-		public static void m1() { System.out.println("Before ALL"); }
+		public static void m1() { logger.log(Level.INFO,"Before ALL"); }
 		
 		@AfterAll
-		public static void m2() { System.out.println("After ALL"); }
+		public static void m2() { logger.log(Level.INFO,"After ALL"); }
 		
 		@AfterEach
-		public  void m3() { System.out.println("After Each"); }
+		public  void m3() { logger.log(Level.INFO,"After Each"); }
 		
 		@BeforeEach
-		public  void m4() { System.out.println("Before Each"); }
+		public  void m4() { logger.log(Level.INFO,"Before Each"); }
 		
 		//Testing
 		
 	
 		@Ignore
 		public void testAdd(){
-			System.out.println("test1");
+			logger.log(Level.INFO,"test1");
 			int addition=Main.add(123, 124);
 			assertEquals(247,addition);
 		}
@@ -28,7 +37,7 @@ public class Jtest {
 	
 		@Ignore
 		public void testdiv(){
-			System.out.println("test3");
+			logger.log(Level.INFO,"test3");
 			int result=Main.div(12,2);
 			assertEquals(6,result);
 		}
@@ -40,8 +49,6 @@ public class Jtest {
 			String oldName=Main.updateEntry(1,"prakash");
 			assertEquals("siva",oldName);
 			assertEquals(1,result);
-			assertEquals("prakash",Main.fetchEntry(1));
-			assertEquals("prakash",Main.deleteEntry(1));
 					
 		}			
 	}
